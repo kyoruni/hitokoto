@@ -11,5 +11,5 @@ require __DIR__ . '/../core/view.php';
 $ids = getRecentPaths($config['posts_per_page']);
 $posts = getPosts($ids);
 
-$template_file = __DIR__ . "/../views/themes/{$theme}/home.php";
-require __DIR__ . "/../views/themes/layout.php";
+$template_file = __DIR__ . "/themes/{$theme}/home.php";
+require __DIR__ . "/themes/layout.php";
