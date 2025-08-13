@@ -1,3 +1,3 @@
 <?php
 
-echo 'default home';
+var_dump($posts);
