@@ -1,14 +1,3 @@
-<?php
-function render_with_layout($template_path, $data = []) {
-    extract($data);
-    
-    ob_start();
-    include $template_path;
-    $content = ob_get_clean();
-    
-    return $content;
-}
-?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -23,7 +12,7 @@ function render_with_layout($template_path, $data = []) {
     </div>
 
     <div class="content">
-        <?= render_with_layout($template_file, get_defined_vars()) ?>
+        <?= renderWithLayout($template_file, get_defined_vars()) ?>
     </div>
 </body>
 </html>

@@ -1,13 +1,13 @@
 <?php
 
-function get_recent_paths(int $limit = 5): array {
+function getRecentPaths(int $limit = 5): array {
     $path = __DIR__ . '/../data/timeline/recent.json';
     $ids  = json_decode(file_get_contents($path), true);
 
     return array_slice($ids, 0, $limit);
 }
 
-function get_posts(array $ids): array {
+function getPosts(array $ids): array {
   $posts = [];
   foreach ($ids as $id) {
     $path = __DIR__ . "/../data/posts/{$id}.json";

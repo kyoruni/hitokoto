@@ -16,6 +16,9 @@ It is built with PHP 8.3.
 - Separate layouts for top page, list view, and detail view
 - Includes a default theme (with future support for theme switching planned)
 
+## Coding standard
+- Please write function names and variable names in camelCase.
+
 ## Architecture
 
 ### Core Structure
