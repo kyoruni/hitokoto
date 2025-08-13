@@ -1,5 +1,5 @@
 <?php
-function renderWithLayout($templatePath, $data = []) {
+function renderWithLayout(string $templatePath, array $data = []): string {
     extract($data);
     
     ob_start();
