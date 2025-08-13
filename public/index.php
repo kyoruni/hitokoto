@@ -9,4 +9,5 @@ require __DIR__ . '/../core/post.php';
 $ids = get_recent_paths($config['posts_per_page']);
 $posts = get_posts($ids);
 
-require __DIR__ . "/../views/themes/{$theme}/home.php";
+$template_file = __DIR__ . "/../views/themes/{$theme}/home.php";
+require __DIR__ . "/../views/themes/layout.php";
