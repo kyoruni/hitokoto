@@ -1,0 +1,7 @@
+{
+  "id": "6",
+  "created": "2025-08-13T08:45:00+09:00",
+  "updated": "2025-08-13T08:45:00+09:00",
+  "body_markdown": "JavaScript ES2024の新機能をチェックしましょう。\n\n- Array.prototype.toSorted()\n- Object.groupBy()\n- Promise.withResolvers()",
+  "body_html": "<p>JavaScript ES2024の新機能をチェックしましょう。</p>\n<ul>\n<li>Array.prototype.toSorted()</li>\n<li>Object.groupBy()</li>\n<li>Promise.withResolvers()</li>\n</ul>"
+}
