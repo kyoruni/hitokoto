@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# 記事詳細ページのURL書き換え /post/3 -> /post.php/3
+RewriteRule ^post/([0-9]+)/?$ post.php/$1 [L]

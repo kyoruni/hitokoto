@@ -28,3 +28,33 @@ function getPosts(array $ids): array {
 
   return $posts;
 }
+
+function getPost(int $id): ?array {
+    $recentPath = __DIR__ . '/../data/timeline/recent.json';
+    $recentIds = json_decode(file_get_contents($recentPath), true);
+    
+    $targetPath = null;
+    foreach ($recentIds as $pathId) {
+        if (basename($pathId) == $id) {
+            $targetPath = $pathId;
+            break;
+        }
+    }
+    
+    if ($targetPath === null) return null;
+    
+    $path = __DIR__ . "/../data/posts/{$targetPath}.json";
+    
+    if (!is_file($path)) return null;
+    
+    $data = json_decode(file_get_contents($path), true);
+    if (!is_array($data)) return null;
+    
+    if (!isset($data['id'], $data['created'], $data['body_html'])) return null;
+    
+    return [
+        'id'        => $data['id'],
+        'created'   => $data['created'],
+        'body_html' => $data['body_html'],
+    ];
+}

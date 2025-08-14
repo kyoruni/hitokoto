@@ -3,7 +3,7 @@
         <?php foreach ($posts as $post): ?>
             <article class="post">
                 <div class="post-meta">
-                    投稿日: <?= date('Y年n月j日 G:i', strtotime($post['created'])) ?>
+                    投稿日: <a href="/post.php/<?= $post['id'] ?>"><?= date('Y年n月j日 G:i', strtotime($post['created'])) ?></a>
                 </div>
                 <div class="post-content">
                     <?= $post['body_html'] ?>
