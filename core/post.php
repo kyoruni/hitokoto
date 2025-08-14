@@ -7,6 +7,35 @@ function getRecentPaths(int $limit = 5): array {
     return array_slice($ids, 0, $limit);
 }
 
+function getRecentPathsPaginated(int $page = 1, int $perPage = 5): array {
+    $path = __DIR__ . '/../data/timeline/recent.json';
+    $ids  = json_decode(file_get_contents($path), true);
+    
+    $offset = ($page - 1) * $perPage;
+    return array_slice($ids, $offset, $perPage);
+}
+
+function getTotalPostsCount(): int {
+    $path = __DIR__ . '/../data/timeline/recent.json';
+    $ids  = json_decode(file_get_contents($path), true);
+    
+    return count($ids);
+}
+
+function getPaginationInfo(int $page, int $perPage, int $totalCount): array {
+    $totalPages = ceil($totalCount / $perPage);
+    $hasNext = $page < $totalPages;
+    $hasPrev = $page > 1;
+    
+    return [
+        'currentPage' => $page,
+        'totalPages' => $totalPages,
+        'hasNext' => $hasNext,
+        'hasPrev' => $hasPrev,
+        'totalCount' => $totalCount
+    ];
+}
+
 function getPosts(array $ids): array {
   $posts = [];
   foreach ($ids as $id) {
