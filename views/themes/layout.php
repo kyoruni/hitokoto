@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="header">
-        <h1><?= htmlspecialchars($config['site_name'] ?? 'ひとこと') ?></h1>
+        <h1><a href="/"><?= htmlspecialchars($config['site_name'] ?? 'ひとこと') ?></a></h1>
     </div>
 
     <div class="content">
