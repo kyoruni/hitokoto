@@ -1,0 +1,13 @@
+DirectoryIndex index.php
+
+RewriteEngine On
+
+# /admin/ にアクセスした場合は index.php にリダイレクト
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^$ index.php [L]
+
+# その他のファイルが存在しない場合は404
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . - [R=404,L]
